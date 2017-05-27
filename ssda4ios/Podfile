@@ -1,0 +1,10 @@
+
+# platform :ios, '8.0'
+
+target 'ssda4ios' do
+pod 'Masonry'
+pod 'AMap2DMap'
+pod 'AMapSearch'
+pod 'AMapLocation'
+pod 'IQKeyboardManager'
+end

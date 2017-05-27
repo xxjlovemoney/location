@@ -1,0 +1,95 @@
+//
+//  PrefixHeader.pch
+//  ssda4ios
+//
+//  Created by 许小军 on 2017/4/30.
+//  Copyright © 2017年 gaga. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+//键盘三方
+#import <IQKeyboardManager.h>
+
+//高德地图相关
+#import <AMapFoundationKit/AMapFoundationKit.h>
+#import <MAMapKit/MAMapKit.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
+
+//这个宏加上后，可以去掉'mas_'这个前缀了
+#define MAS_SHORTHAND
+//这个宏加上后，可以去掉自动包装方法的'mas_'前缀
+#define MAS_SHORTHAND_GLOBALS
+//注意，这两个宏必须定义在这个头文件的上面，因为"Masonry.h"中要用到上面2个宏，如果已经定义过了的话
+#import <Masonry.h>
+
+
+//工具类
+#import "UIView+ChangeSize.h"
+#import "UIColor+UIColor.h"
+#import "UILabel+XXJLableFit.h"
+#import "UIBarButtonItem+XXJNavItem.h"
+#import "BRPlaceholderTextView.h"
+#import "UIImage+XXJImageColor.h"
+#import "UIButton+OrderInfoButton.h"
+#import "UITextField+Placeholder.h"
+#import "XXJLeftRightButton.h"
+
+//自定义Button
+#import "XXJButton.h"
+#import "BizInfoButton.h"
+
+//适配
+#define W(float) [UIView setWidth:(float)]
+#define H(float) [UIView setHeight:(float)]
+
+//
+#define MW(float) [UIView setMWidth:(float)]
+#define MH(float) [UIView setMHeight:(float)]
+
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define HEIGHT [UIScreen mainScreen].bounds.size.height
+
+
+#define kNavigationBarHeight 44
+#define kStatusBarHeight 20
+#define kMarginTopHeight 64
+#define kTabBarHeight 49
+
+
+
+#endif /* PrefixHeader_pch */
+
+
+//----------------------ABOUT PRINTING LOG 打印日志 ----------------------------
+//Using dlog to print while in debug model.        调试状态下打印日志
+#ifdef DEBUG
+#   define XXJLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define XXJLog(...)
+#endif
+
+
+
+//----------------------ABOUT COLOR 颜色相关 ----------------------------
+
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+
+#define DefineUnitItemColor RGBCOLOR(242.f,242.f,242.f)
+
+
+
+
+
+
+
+
+
+
+
+
+
